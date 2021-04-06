@@ -36,7 +36,7 @@ class DataBaseManager {
             }
             result = res
         } catch {
-            print("Failed fetching data of garments")
+            print("Failed fetching data")
         }
         return result
     }

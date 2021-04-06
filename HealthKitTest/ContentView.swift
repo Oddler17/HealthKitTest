@@ -26,14 +26,33 @@ struct ContentView: View {
 //                self.viewModel.fetchItems()
 //            }
             .toolbar {
-                Button(action: addItem) {
-                    Label("Add Item", systemImage: "plus")
+                ToolbarItemGroup(placement: .navigationBarTrailing) {
+                    Button("ADD") {
+                        addItem()
+                    }
+
+                    Button("UPD") {
+                        update()
+                    }
                 }
+                
+//                Button(action: addItem) {
+//                    Label("Add Item", systemImage: "plus")
+//                }
+//                Spacer()
+//                Button(action: update) {
+//                    Label("UPD", systemImage: "")
+//                        .labelStyle(TitleOnlyLabelStyle())
+//                }
             }
         }
     }
     
     private func addItem() {
         dbManager.addCustomer(name: "Some Name", phone: "234124234")
+    }
+    
+    private func update() {
+        viewModel.fetchData()
     }
 }
