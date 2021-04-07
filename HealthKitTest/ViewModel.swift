@@ -9,6 +9,7 @@ import Foundation
 import Combine
 import SwiftUI
 import HealthKit
+import CoreData
 
 class ViewModel: ObservableObject { // Gives opportunity to react on changes of @Published property of this object
 
@@ -19,24 +20,40 @@ class ViewModel: ObservableObject { // Gives opportunity to react on changes of 
                                              ZCustomer(id: UUID(), name: "John", phone: "76575") ]
 
     var cancellables = [AnyCancellable]()
-
+    
+    //TEST
+    let dbManager = DataBaseManager()
+    
     @Environment(\.managedObjectContext) var context
     
     init() {
-        getTodaysSteps { steps in
-            print(steps)
+        // TEST
+        let person = Customer(context: context)
+        person.id = UUID()
+        person.name = "r4eregre"
+        person.phone = "6756858"
+        
+        do {
+            try context.save() // PROBLEM HERE: "Error: nilError" (similar bug - https://bugs.swift.org/browse/SR-11607)
+        } catch {
+            print("Error: \(error)")
         }
         
-        getHeartRateFromTomorrowMorning { heartRateArray in
-            print(heartRateArray)
-        }
-
-        getStepsPerDayForMonth { stepsArray in
-            print(stepsArray)
-        }
-        
-        print("Blood type: \(getBloodType())")
-        print("Age: \(getAge())")
+//        fetchData()
+//        getTodaysSteps { steps in
+//            print(steps)
+//        }
+//
+//        getHeartRateFromTomorrowMorning { heartRateArray in
+//            print(heartRateArray)
+//        }
+//
+//        getStepsPerDayForMonth { stepsArray in
+//            print(stepsArray)
+//        }
+//
+//        print("Blood type: \(getBloodType())")
+//        print("Age: \(getAge())")
     }
     
     func fetchData() {

@@ -11,6 +11,7 @@ import Combine
 
 struct ContentView: View {
     
+    @Environment(\.managedObjectContext) var context
     @ObservedObject private var viewModel: ViewModel = ViewModel() // @ObservedObject - we can react on it's changes
     private var cancellable: AnyCancellable?
     let dbManager = DataBaseManager()
@@ -23,27 +24,17 @@ struct ContentView: View {
                 }
             }
 //            .onAppear {
-//                self.viewModel.fetchItems()
+//                self.viewModel.fetch()
 //            }
             .toolbar {
                 ToolbarItemGroup(placement: .navigationBarTrailing) {
                     Button("ADD") {
                         addItem()
                     }
-
                     Button("UPD") {
                         update()
                     }
                 }
-                
-//                Button(action: addItem) {
-//                    Label("Add Item", systemImage: "plus")
-//                }
-//                Spacer()
-//                Button(action: update) {
-//                    Label("UPD", systemImage: "")
-//                        .labelStyle(TitleOnlyLabelStyle())
-//                }
             }
         }
     }
