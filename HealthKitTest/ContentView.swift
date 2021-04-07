@@ -49,7 +49,9 @@ struct ContentView: View {
     }
     
     private func addItem() {
-        dbManager.addCustomer(name: "Some Name", phone: "234124234")
+//        dbManager.addCustomer(name: "Some Name", phone: "234124234")
+        // TEST
+        viewModel.customers.append(ZCustomer(id: UUID(), name: "RandomGuy", phone: "55555545"))
     }
     
     private func update() {
