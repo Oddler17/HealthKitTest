@@ -18,6 +18,7 @@
 		8548549B261BD5630028BD08 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8548549A261BD5630028BD08 /* ViewModel.swift */; };
 		854854A4261BDBC60028BD08 /* DataBaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 854854A3261BDBC60028BD08 /* DataBaseManager.swift */; };
 		854854A9261CDF9B0028BD08 /* FetchPublisher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 854854A8261CDF9B0028BD08 /* FetchPublisher.swift */; };
+		854854B7261E722D0028BD08 /* SaveDataPublisher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 854854B6261E72290028BD08 /* SaveDataPublisher.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,6 +36,7 @@
 		854854A3261BDBC60028BD08 /* DataBaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataBaseManager.swift; sourceTree = "<group>"; };
 		854854A8261CDF9B0028BD08 /* FetchPublisher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchPublisher.swift; sourceTree = "<group>"; };
 		854854B2261CE7B30028BD08 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = HealthKitTest/Info.plist; sourceTree = "<group>"; };
+		854854B6261E72290028BD08 /* SaveDataPublisher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveDataPublisher.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,6 +76,7 @@
 				85485471261B9BE60028BD08 /* HealthKitTestApp.swift */,
 				8548547A261B9BE90028BD08 /* Persistence.swift */,
 				854854A8261CDF9B0028BD08 /* FetchPublisher.swift */,
+				854854B6261E72290028BD08 /* SaveDataPublisher.swift */,
 				85485495261BD4800028BD08 /* Model.swift */,
 				85485473261B9BE60028BD08 /* ContentView.swift */,
 				8548549A261BD5630028BD08 /* ViewModel.swift */,
@@ -197,6 +200,7 @@
 				8548547E261B9BE90028BD08 /* HealthKitTest.xcdatamodeld in Sources */,
 				854854A4261BDBC60028BD08 /* DataBaseManager.swift in Sources */,
 				8548547B261B9BE90028BD08 /* Persistence.swift in Sources */,
+				854854B7261E722D0028BD08 /* SaveDataPublisher.swift in Sources */,
 				85485474261B9BE60028BD08 /* ContentView.swift in Sources */,
 				85485496261BD4800028BD08 /* Model.swift in Sources */,
 				854854A9261CDF9B0028BD08 /* FetchPublisher.swift in Sources */,

@@ -9,7 +9,7 @@ import SwiftUI
 
 @main
 struct HealthKitTestApp: App {
-    let persistenceController = PersistenceController.preview //.shared
+    let persistenceController = PersistenceController.shared
     
     @Environment(\.scenePhase) var scenePhase
     

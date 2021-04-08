@@ -13,33 +13,10 @@ import CoreData
 
 class ViewModel: ObservableObject { // Gives opportunity to react on changes of @Published property of this object
 
-//    @Published private(set) var customers: [ZCustomer] = []
-    //TEST
-    @Published var customers: [ZCustomer] = [ZCustomer(id: UUID(), name: "Alex", phone: "234111"),
-                                             ZCustomer(id: UUID(), name: "Andrew", phone: "2342324"),
-                                             ZCustomer(id: UUID(), name: "John", phone: "76575") ]
-
+    @Published private(set) var customers: [ZCustomer] = []
     var cancellables = [AnyCancellable]()
     
-    //TEST
-    let dbManager = DataBaseManager()
-    
-    @Environment(\.managedObjectContext) var context
-    
     init() {
-        // TEST
-        let person = Customer(context: context)
-        person.id = UUID()
-        person.name = "r4eregre"
-        person.phone = "6756858"
-        
-        do {
-            try context.save() // PROBLEM HERE: "Error: nilError" (similar bug - https://bugs.swift.org/browse/SR-11607)
-        } catch {
-            print("Error: \(error)")
-        }
-        
-//        fetchData()
 //        getTodaysSteps { steps in
 //            print(steps)
 //        }
@@ -56,15 +33,35 @@ class ViewModel: ObservableObject { // Gives opportunity to react on changes of 
 //        print("Age: \(getAge())")
     }
     
-    func fetchData() {
+    func fetchData(_ context: NSManagedObjectContext) {
         CoreDataFetchResultsPublisher(request: Customer.fetchRequest(), context: context)
             .receive(on: DispatchQueue.main)
             .replaceError(with: [])
-            .map { $0.map { ZCustomer(id: $0.id!, name: $0.name!, phone: $0.phone!)} }
+            .map { $0.map { customer in
+                return ZCustomer(id: customer.id!, name: customer.name!, phone: customer.phone!)
+            }}
             .sink { [weak self] newCustomers in
-                self?.customers = newCustomers
+                guard let self = self else {
+                    return
+                }
+                self.customers = newCustomers
+                print(self.customers.count)
             }
             .store(in: &cancellables)
+    }
+    
+    func addItem(_ context: NSManagedObjectContext) {
+        let person = Customer(context: context)
+        person.id = UUID()
+        person.name = "r4eregre"
+        person.phone = "6756858"
+        
+        do {
+            try context.save()
+        } catch {
+            print("Error: \(error)")
+        }
+        fetchData(context)
     }
     
     //MARK: - Health Kit (TODO: - Create Helper for it)

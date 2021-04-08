@@ -23,9 +23,9 @@ struct ContentView: View {
                     Text("\(customer.id): \(customer.name))")
                 }
             }
-//            .onAppear {
-//                self.viewModel.fetch()
-//            }
+            .onAppear {
+                update()
+            }
             .toolbar {
                 ToolbarItemGroup(placement: .navigationBarTrailing) {
                     Button("ADD") {
@@ -40,12 +40,10 @@ struct ContentView: View {
     }
     
     private func addItem() {
-//        dbManager.addCustomer(name: "Some Name", phone: "234124234")
-        // TEST
-        viewModel.customers.append(ZCustomer(id: UUID(), name: "RandomGuy", phone: "55555545"))
+        viewModel.addItem(context)
     }
     
     private func update() {
-        viewModel.fetchData()
+        viewModel.fetchData(context)
     }
 }
