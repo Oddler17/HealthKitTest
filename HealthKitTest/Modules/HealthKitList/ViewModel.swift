@@ -240,8 +240,3 @@ extension HKBloodTypeObject {
         }
     }
 }
-
-//let energyBurned = HKObjectType.quantityType(forIdentifier: .activeEnergyBurned)
-//let distanceCycling = HKObjectType.quantityType(forIdentifier: .distanceCycling)
-//let distanceWalking = HKObjectType.quantityType(forIdentifier: .distanceWalkingRunning)
-//let workout = HKObjectType.workoutType()

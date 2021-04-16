@@ -15,7 +15,7 @@ struct HealthKitTestApp: App {
     
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            WelcomeView()
                 .environment(\.managedObjectContext, persistenceController.container.viewContext)
         }.onChange(of: scenePhase) { _ in
             persistenceController.save()

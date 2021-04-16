@@ -7,8 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7B4A6D3A26264C8700B9878D /* WelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B4A6D3926264C8700B9878D /* WelcomeView.swift */; };
+		7B4A6D402626658700B9878D /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B4A6D3F2626658700B9878D /* ContentView.swift */; };
+		7B4A6D742628E79300B9878D /* TextAndButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B4A6D732628E79300B9878D /* TextAndButton.swift */; };
+		7B4A6D772628F47300B9878D /* TextAndButtonViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B4A6D762628F47300B9878D /* TextAndButtonViewModel.swift */; };
+		7B4A6D802628FC2300B9878D /* ExampleTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B4A6D7F2628FC2300B9878D /* ExampleTable.swift */; };
+		7B4A6D832629060A00B9878D /* ExampleTableViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B4A6D822629060A00B9878D /* ExampleTableViewModel.swift */; };
 		85485472261B9BE60028BD08 /* HealthKitTestApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85485471261B9BE60028BD08 /* HealthKitTestApp.swift */; };
-		85485474261B9BE60028BD08 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85485473261B9BE60028BD08 /* ContentView.swift */; };
 		85485476261B9BE90028BD08 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 85485475261B9BE90028BD08 /* Assets.xcassets */; };
 		85485479261B9BE90028BD08 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 85485478261B9BE90028BD08 /* Preview Assets.xcassets */; };
 		8548547B261B9BE90028BD08 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8548547A261B9BE90028BD08 /* Persistence.swift */; };
@@ -22,9 +27,14 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		7B4A6D3926264C8700B9878D /* WelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeView.swift; sourceTree = "<group>"; };
+		7B4A6D3F2626658700B9878D /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		7B4A6D732628E79300B9878D /* TextAndButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextAndButton.swift; sourceTree = "<group>"; };
+		7B4A6D762628F47300B9878D /* TextAndButtonViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextAndButtonViewModel.swift; sourceTree = "<group>"; };
+		7B4A6D7F2628FC2300B9878D /* ExampleTable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleTable.swift; sourceTree = "<group>"; };
+		7B4A6D822629060A00B9878D /* ExampleTableViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleTableViewModel.swift; sourceTree = "<group>"; };
 		8548546E261B9BE60028BD08 /* HealthKitTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HealthKitTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		85485471261B9BE60028BD08 /* HealthKitTestApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthKitTestApp.swift; sourceTree = "<group>"; };
-		85485473261B9BE60028BD08 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		85485475261B9BE90028BD08 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		85485478261B9BE90028BD08 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		8548547A261B9BE90028BD08 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
@@ -51,6 +61,55 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7B4A6D3426264BE600B9878D /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				7B4A6D3626264BFF00B9878D /* WelcomeScreen */,
+				7B4A6D3826264C4200B9878D /* VStack Test */,
+				7B4A6D3726264C1E00B9878D /* Text & Button Test */,
+				7B4A6D3526264BF000B9878D /* HealthKitList */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		7B4A6D3526264BF000B9878D /* HealthKitList */ = {
+			isa = PBXGroup;
+			children = (
+				854854A8261CDF9B0028BD08 /* FetchPublisher.swift */,
+				854854B6261E72290028BD08 /* SaveDataPublisher.swift */,
+				85485495261BD4800028BD08 /* Model.swift */,
+				8548549A261BD5630028BD08 /* ViewModel.swift */,
+				7B4A6D3F2626658700B9878D /* ContentView.swift */,
+			);
+			path = HealthKitList;
+			sourceTree = "<group>";
+		};
+		7B4A6D3626264BFF00B9878D /* WelcomeScreen */ = {
+			isa = PBXGroup;
+			children = (
+				7B4A6D3926264C8700B9878D /* WelcomeView.swift */,
+			);
+			path = WelcomeScreen;
+			sourceTree = "<group>";
+		};
+		7B4A6D3726264C1E00B9878D /* Text & Button Test */ = {
+			isa = PBXGroup;
+			children = (
+				7B4A6D732628E79300B9878D /* TextAndButton.swift */,
+				7B4A6D762628F47300B9878D /* TextAndButtonViewModel.swift */,
+			);
+			path = "Text & Button Test";
+			sourceTree = "<group>";
+		};
+		7B4A6D3826264C4200B9878D /* VStack Test */ = {
+			isa = PBXGroup;
+			children = (
+				7B4A6D7F2628FC2300B9878D /* ExampleTable.swift */,
+				7B4A6D822629060A00B9878D /* ExampleTableViewModel.swift */,
+			);
+			path = "VStack Test";
+			sourceTree = "<group>";
+		};
 		85485465261B9BE60028BD08 = {
 			isa = PBXGroup;
 			children = (
@@ -75,11 +134,7 @@
 				85485486261B9C840028BD08 /* HealthKitTest.entitlements */,
 				85485471261B9BE60028BD08 /* HealthKitTestApp.swift */,
 				8548547A261B9BE90028BD08 /* Persistence.swift */,
-				854854A8261CDF9B0028BD08 /* FetchPublisher.swift */,
-				854854B6261E72290028BD08 /* SaveDataPublisher.swift */,
-				85485495261BD4800028BD08 /* Model.swift */,
-				85485473261B9BE60028BD08 /* ContentView.swift */,
-				8548549A261BD5630028BD08 /* ViewModel.swift */,
+				7B4A6D3426264BE600B9878D /* Modules */,
 				8548549E261BDBAF0028BD08 /* Managers */,
 				8548548B261B9DD00028BD08 /* CoreData Model */,
 				8548548C261B9DDC0028BD08 /* Supporting Files */,
@@ -198,11 +253,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				8548547E261B9BE90028BD08 /* HealthKitTest.xcdatamodeld in Sources */,
+				7B4A6D802628FC2300B9878D /* ExampleTable.swift in Sources */,
 				854854A4261BDBC60028BD08 /* DataBaseManager.swift in Sources */,
 				8548547B261B9BE90028BD08 /* Persistence.swift in Sources */,
+				7B4A6D772628F47300B9878D /* TextAndButtonViewModel.swift in Sources */,
+				7B4A6D742628E79300B9878D /* TextAndButton.swift in Sources */,
 				854854B7261E722D0028BD08 /* SaveDataPublisher.swift in Sources */,
-				85485474261B9BE60028BD08 /* ContentView.swift in Sources */,
+				7B4A6D3A26264C8700B9878D /* WelcomeView.swift in Sources */,
 				85485496261BD4800028BD08 /* Model.swift in Sources */,
+				7B4A6D402626658700B9878D /* ContentView.swift in Sources */,
+				7B4A6D832629060A00B9878D /* ExampleTableViewModel.swift in Sources */,
 				854854A9261CDF9B0028BD08 /* FetchPublisher.swift in Sources */,
 				85485472261B9BE60028BD08 /* HealthKitTestApp.swift in Sources */,
 				8548549B261BD5630028BD08 /* ViewModel.swift in Sources */,

@@ -2,7 +2,7 @@
 //  ContentView.swift
 //  HealthKitTest
 //
-//  Created by Arseniy Oddler on 4/5/21.
+//  Created by Arseniy Khaladok on 4/13/21.
 //
 
 import SwiftUI
