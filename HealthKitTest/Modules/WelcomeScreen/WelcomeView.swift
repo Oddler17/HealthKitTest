@@ -28,22 +28,22 @@ struct WelcomeView: View {
         VStack {
             Text("Welcome")
                 .fontWeight(.heavy)
-                .font(.system(size: 50))
+                .font(.system(size: 40))
                 .frame(width: 300, alignment: .leading)
             
             VStack(alignment: .leading, spacing: 0) {
-                NewDetail(image: "heart.fill", imageColor: .pink, title: "Local Notifications", description: "Show local notifications dialog",
+                NewDetail(image: "heart.fill", imageColor: .pink, title: "Local Notifications", description: "Show local notifications dialogue. Alrert if it was setup.",
                           buttonAction: {
                             showLocalNotificationsDialogIfNeeded()
                           }).alert(isPresented: $needToShowLocalNotificationsAlert) {
                             Alert(title: Text("Local notifications already accepted"), message: Text(""), dismissButton: .default(Text("Got it!")))
                         }
-                NewDetail(image: "paperclip", imageColor: .green, title: "HealthKit", description: "Shows HealthKit authorization dialog",
+                NewDetail(image: "paperclip", imageColor: .green, title: "HealthKit", description: "Shows HealthKit authorization dialogue.",
                           buttonAction: {
                             showHealthKitAccessDialog()
                           })
                 ZStack(alignment: .leading) {
-                    NewDetail(image: "play.rectangle.fill", imageColor: .blue, title: "HealthKit Test", description: "Testing of the HealthKit", buttonAction: {})
+                    NewDetail(image: "play.rectangle.fill", imageColor: .blue, title: "HealthKit Test", description: "Testing of the HealthKit. And CoreData. Change it.", buttonAction: {})
                     NavigationLink(destination: ContentView()) {
                         Text("")
                             .frame(minWidth: 340)
@@ -53,7 +53,7 @@ struct WelcomeView: View {
                 }
                 
                 ZStack(alignment: .leading) {
-                    NewDetail(image: "paperclip", imageColor: .red, title: "VStack Test", description: "Lazy VStack View test",
+                    NewDetail(image: "paperclip", imageColor: .red, title: "VStack Test", description: "Combine - LazyVStack with adding and deleting elements.",
                               buttonAction: {})
                     NavigationLink(destination: ExampleTable()) {
                         Text("")
@@ -62,7 +62,7 @@ struct WelcomeView: View {
                     }
                 }
                 ZStack(alignment: .leading) {
-                    NewDetail(image: "play.rectangle.fill", imageColor: .yellow, title: "Text & Button", description: "Binding text and button",
+                    NewDetail(image: "play.rectangle.fill", imageColor: .yellow, title: "Text & Button", description: "Combine - Different ways to bind text and button.",
                               buttonAction: {})
                     NavigationLink(destination: TextAndButton()) {
                         Text("")
@@ -128,6 +128,7 @@ struct WelcomeView: View {
                         
                             Text(description)
                                 .fixedSize(horizontal: false, vertical: true)
+                                .lineLimit(2)
                         }
                     }.frame(width: 340, height: 100)
                     
